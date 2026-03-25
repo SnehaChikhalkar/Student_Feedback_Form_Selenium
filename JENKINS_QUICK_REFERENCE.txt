@@ -1,0 +1,56 @@
+# Jenkins Quick Reference - Student Feedback Form DevOps CA2
+
+## Jenkins Status
+- **Status:** Running
+- **Port:** 8080
+- **URL:** http://localhost:8080
+
+## Login Credentials
+```
+Username: admin
+Password: 3cc996247c7e4786977019b21f70a035
+```
+
+## Configured Tools
+- **Maven 3:** C:\Users\sharv\maven\apache-maven
+- **JDK 17:** C:\Program Files\Microsoft\jdk-17.0.17.10-hotspot
+
+## Project Setup
+**Project Location:** 
+e:\Sharvayu data\Malware\Symbiosis Nagpur SIT\6th SEM\DevOps\CA2\DevOps_CA2
+
+**Jenkinsfile:** 
+Configures pipeline to run Selenium tests
+
+**Selenium Tests:** 
+7 test cases in selenium-tests/src/test/java/com/ca2/StudentFeedbackFormTest.java
+
+## Next Steps
+1. Log into Jenkins: http://localhost:8080
+2. Configure Maven in Tools (if not auto-configured)
+3. Configure JDK in Tools (if not auto-configured)
+4. Create "StudentFeedbackFormTests" Pipeline job
+5. Point to your Git repository
+6. Jenkinsfile path: `Jenkinsfile`
+7. Click "Build Now" to run tests
+
+## Test Execution
+Each build will:
+- Run Maven clean test
+- Execute 7 Selenium test cases
+- Generate JUnit XML reports
+- Archive test artifacts
+
+## Important Files Created
+- jenkins-casc.yml - Configuration as Code (auto-config)
+- jenkins-config.groovy - Groovy configuration script
+- JENKINS_SETUP.md - Detailed setup guide
+- This file - Quick reference
+
+## Troubleshooting
+- Jenkins logs: C:\Users\{username}\.jenkins\logs
+- Test reports: selenium-tests\target\surefire-reports
+- Browser: Chrome/Chromium required for Selenium
+
+---
+Jenkins is ready for automated testing!

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Feedback Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Internal CSS as required: quick visual polish and spacing tweaks */
+    .required-mark {
+      color: #b1261e;
+      font-weight: 700;
+    }
+
+    .hint {
+      margin-top: 4px;
+      font-size: 0.86rem;
+      color: #5c6166;
+    }
+  </style>
+</head>
+<body>
+  <main class="page-wrap">
+    <section class="form-card">
+      <h1>Student Feedback Registration Form</h1>
+      <p class="subtitle">Please share your feedback. All mandatory fields are marked.</p>
+
+      <form id="feedbackForm" novalidate>
+        <div class="field-group">
+          <label for="studentName">Student Name <span class="required-mark">*</span></label>
+          <input type="text" id="studentName" name="studentName" placeholder="Enter your full name">
+          <small class="error" id="studentNameError"></small>
+        </div>
+
+        <div class="field-group">
+          <label for="email">Email ID <span class="required-mark">*</span></label>
+          <input type="email" id="email" name="email" placeholder="name@example.com">
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="field-group">
+          <label for="mobile">Mobile Number <span class="required-mark">*</span></label>
+          <input type="text" id="mobile" name="mobile" placeholder="10 digit mobile number" maxlength="10">
+          <small class="error" id="mobileError"></small>
+          <p class="hint">Digits only, exactly 10 digits.</p>
+        </div>
+
+        <div class="field-group">
+          <label for="department">Department <span class="required-mark">*</span></label>
+          <select id="department" name="department">
+            <option value="">Select Department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+          </select>
+          <small class="error" id="departmentError"></small>
+        </div>
+
+        <fieldset class="field-group gender-set">
+          <legend>Gender <span class="required-mark">*</span></legend>
+          <div class="inline-options">
+            <label for="genderMale">
+              <input type="radio" id="genderMale" name="gender" value="Male"> Male
+            </label>
+            <label for="genderFemale">
+              <input type="radio" id="genderFemale" name="gender" value="Female"> Female
+            </label>
+            <label for="genderOther">
+              <input type="radio" id="genderOther" name="gender" value="Other"> Other
+            </label>
+          </div>
+          <small class="error" id="genderError"></small>
+        </fieldset>
+
+        <div class="field-group">
+          <label for="comments">Feedback Comments <span class="required-mark">*</span></label>
+          <textarea id="comments" name="comments" rows="5" placeholder="Write at least 10 words about your feedback"></textarea>
+          <small class="error" id="commentsError"></small>
+        </div>
+
+        <div class="button-row">
+          <button type="submit" id="submitBtn">Submit</button>
+          <button type="reset" id="resetBtn" class="secondary">Reset</button>
+        </div>
+
+        <div id="resultMessage" class="result-message" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+jenkins:
+  systemMessage: "Student Feedback Form - DevOps CA2 Jenkins Pipeline"
+  
+  securityRealm:
+    saml: null
+    local:
+      allowsSignup: false
+  
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+          - name: "admin"
+            permissions:
+              - "Overall/Administer"
+          - name: "user"
+            permissions:
+              - "Job/Build"
+              - "Job/Cancel"
+              - "Job/Read"
+  
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+
+unclassified:
+  location:
+    url: "http://localhost:8080/"
+
+tools:
+  maven:
+    installations:
+      - name: "Maven3"
+        home: "C:\\Users\\sharv\\maven\\apache-maven"
+  jdk:
+    installations:
+      - name: "JDK17"
+        home: "C:\\Program Files\\Microsoft\\jdk-17.0.17.10-hotspot"
